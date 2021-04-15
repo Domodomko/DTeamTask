@@ -7,6 +7,7 @@ urlpatterns = [
     path('api/news/<int:pk>', views.NewsDetailAPIView.as_view(), name='api_news_detail'),
     path('api/news_create/', views.NewsCreateAPIView.as_view(), name='api_news_create'),
     # Templates
-    path('home/', views.HomeView.as_view(), name='home'),
-    path('news/', views.NewsListView.as_view(), name='news_list')
+    path('', views.HomeView.as_view(), name='home'),
+    path('news/', views.NewsListView.as_view(), name='news_list'),
+    path('authors/', views.AuthorsListView.as_view(), name='authors_list')
 ]

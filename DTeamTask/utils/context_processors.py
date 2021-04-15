@@ -3,11 +3,15 @@ def get_nav_bar_to_context(request):
         'nav_bar': [
             {
                 'name': 'Home',
-                'link': '../home'
+                'link': '../'
             },
             {
                 'name': 'News',
                 'link': '../news'
+            },
+            {
+                'name': 'Authors',
+                'link': '../authors'
             }
         ]
     }

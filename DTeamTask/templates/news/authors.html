@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Authors</title>
 </head>
 <body style="font-family: Arial; font-size: 18px">
     <header style="background-color: black; color: white; display: block; height: 40px; font-weight: 800">
@@ -12,9 +12,13 @@
             {% endfor %}
         </ul>
     </header>
-    <h1>Home</h1>
-    <span style = "display: inline-block; padding-top: 20px;">
-        Hello, World!
-    </span>
+    <h1>Authors</h1>
+    <ul>
+        {% for author in authors %}
+        <li>
+            <h3>{{author.username}} [{{author.news.all|length}}]</h3>
+        </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

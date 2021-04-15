@@ -5,6 +5,8 @@ from rest_framework.permissions import IsAuthenticated
 from .serializers import NewsSerializer
 from .models import News
 from django.views.generic import ListView, DetailView, TemplateView
+from django.contrib.auth.models import User
+
 
 # API
 
@@ -47,3 +49,9 @@ class NewsListView(ListView):
     queryset = News.objects.all()
     context_object_name = 'news_list'
     template_name = 'news/news_list.html'
+
+
+class AuthorsListView(ListView):
+    queryset = User.objects.all()
+    context_object_name = 'authors'
+    template_name = 'news/authors.html'
