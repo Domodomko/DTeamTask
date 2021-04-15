@@ -1,6 +1,7 @@
 from .development import *
 
 DEBUG = config('DEBUG', default=False, cast=bool)
+ROOT_URLCONF = 'DTeamTask.urls'
 
 DATABASES = {
     'default': {
