@@ -1,4 +1,4 @@
-# DTeam Junior Task
+# DTeam Task
 ## Made by Sergei Shinn
 ## [Heroku](https://dteamtask.herokuapp.com)
 A Django app with news, made as a test task for a Backend-developer vacancy.
