@@ -1,6 +1,6 @@
 # Data files
-/settings.ini
-/settings.env
+*settings.ini
+*settings.env
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
