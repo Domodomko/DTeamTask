@@ -19,8 +19,14 @@
         <li>
             <h2>{{news.title}}</h2>
             <p>{{news.content}}</p>
-            <span style="display:block;">Published at: {{news.publication_date}}</span>
-            <span style="display:block;">Author: {{news.author.username}}</span>
+            <span style="display:block; font-size: 15px">Published at: {{news.publication_date}}</span>
+            <span style="display:block; font-size: 15px">Author:
+                {% if news.author.username|length > 0 %}
+                    {{news.author.username}}
+                {% else %}
+                    Bot
+                {% endif %}
+            </span>
         </li>
         {% endfor %}
     </ul>
