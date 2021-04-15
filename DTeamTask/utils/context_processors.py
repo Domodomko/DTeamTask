@@ -12,6 +12,10 @@ def get_nav_bar_to_context(request):
             {
                 'name': 'Authors',
                 'link': '../authors'
+            },
+            {
+                'name': 'Swagger',
+                'link': '../swagger'
             }
         ]
     }
