@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_celery_beat',
     'django_celery_results',
+    'corsheaders',
     # local
     'news',
 ]
@@ -50,6 +52,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -139,3 +142,7 @@ CELERY_TIMEZONE = config('CELERY_TIMEZONE')
 CELERY_TASK_TRACK_STARTED = config('CELERY_TASK_TRACK_STARTED')
 CELERY_TASK_TIME_LIMIT = config('CELERY_TASK_TIME_LIMIT')
 CELERY_BROKER_URL = config('CELERY_BROKER_URL')
+
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
