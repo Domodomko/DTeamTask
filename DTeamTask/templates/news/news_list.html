@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News</title>
+</head>
+<body style="font-family: Arial; font-size: 18px">
+    <header style="background-color: black; color: white; display: block; height: 40px; font-weight: 800">
+        <ul style = "list-style-type: none; padding-top: 6px;">
+            {% for item in nav_bar %}
+            <li style="display: inline; margin: 0 20px;"> <a href="{{item.link}}" style="text-decoration: none; color:inherit">{{item.name}}</a></li>
+            {% endfor %}
+        </ul>
+    </header>
+    <ul>
+        {% for news in news_list %}
+        <li>
+            <h1>{{news.title}}</h1>
+            <p>{{news.content}}</p>
+            <span style="display:block;">Published at: {{news.publication_date}}</span>
+            <span style="display:block;">Author: {{news.author.username}}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

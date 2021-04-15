@@ -4,19 +4,21 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from .serializers import NewsSerializer
 from .models import News
+from django.views.generic import ListView, DetailView, TemplateView
 
+# API
 
-class NewsListView(generics.ListAPIView):
+class NewsListAPIView(generics.ListAPIView):
     queryset = News.objects.all()
     serializer_class = NewsSerializer
 
 
-class NewsDetailView(generics.RetrieveUpdateDestroyAPIView):
+class NewsDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = News.objects.all()
     serializer_class = NewsSerializer
 
 
-class NewsCreateView(generics.CreateAPIView):
+class NewsCreateAPIView(generics.CreateAPIView):
     queryset = News.objects.all()
     serializer_class = NewsSerializer
     permission_classes = [IsAuthenticated]
@@ -33,3 +35,15 @@ class NewsCreateView(generics.CreateAPIView):
             return Response(self.get_serializer(news).data)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+# Templates
+
+class HomeView(TemplateView):
+    template_name = 'home.html'
+
+
+class NewsListView(ListView):
+    queryset = News.objects.all()
+    context_object_name = 'news_list'
+    template_name = 'news/news_list.html'

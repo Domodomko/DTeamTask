@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body style="font-family: Arial; font-size: 18px">
+    <header style="background-color: black; color: white; display: block; height: 40px; font-weight: 800">
+        <ul style = "list-style-type: none; padding-top: 6px;">
+            {% for item in nav_bar %}
+            <li style="display: inline; margin: 0 20px;"> <a href="{{item.link}}" style="text-decoration: none; color:inherit">{{item.name}}</a></li>
+            {% endfor %}
+        </ul>
+    </header>
+    <span style = "display: inline-block; padding-top: 20px;">
+        Hello, World!
+    </span>
+</body>
+</html>
