@@ -1,3 +1,3 @@
 web: gunicorn --pythonpath DTeamTask DTeamTask.wsgi
-beat: celery -A DTeamTask beat
-celery: celery -A DTeamTask worker -l INFO --pool=solo
+worker: sh -c 'cd DTeamTask && celery -A DTeamTask worker -l INFO --pool=solo'
+beat: sh -c 'cd DTeamTask && celery -A DTeamTask beat'
