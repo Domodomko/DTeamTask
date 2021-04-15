@@ -19,3 +19,9 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+
+
+# Admin Panel Customize
+admin.site.site_header = "DTeam Administration"
+admin.site.site_title = "DTeam Administration"
+admin.site.index_title = "Welcome to DTeam Administration"
