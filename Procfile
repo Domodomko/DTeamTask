@@ -1,1 +1,1 @@
-web: gunicorn DTeamTask.DTeamTask.wsgi
+web: gunicorn --pythonpath DTeamTask DTeamTask.wsgi
