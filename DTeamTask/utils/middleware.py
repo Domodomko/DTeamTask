@@ -7,5 +7,5 @@ class HelloWorldMiddleware:
         comment = '<!--Hello, World!-->'
         request.comment = comment
         response = self.get_response(request)
-        response['Message to a World'] = "Hello, World!"
+        response['Message-to-a-World'] = "Hello, World!"
         return response
