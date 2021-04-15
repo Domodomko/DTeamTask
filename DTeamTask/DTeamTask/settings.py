@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # third party
     'rest_framework',
+    'django_celery_beat',
+    'django_celery_results',
     # local
     'news',
 ]
@@ -129,3 +131,11 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Celery Settings
+
+CELERY_TIMEZONE = config('CELERY_TIMEZONE')
+CELERY_TASK_TRACK_STARTED = config('CELERY_TASK_TRACK_STARTED')
+CELERY_TASK_TIME_LIMIT = config('CELERY_TASK_TIME_LIMIT')
+CELERY_BROKER_URL = config('CELERY_BROKER_URL')

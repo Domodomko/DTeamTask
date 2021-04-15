@@ -2,6 +2,11 @@
 *settings.ini
 *settings.env
 
+# Celery
+*celerybeat-schedule.bak
+*celerybeat-schedule.dat
+*celerybeat-schedule.dir
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
