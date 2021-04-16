@@ -1,13 +1,16 @@
 # DTeam Task
 ## Made by Sergei Shinn
-## [Heroku](https://dteamtask.herokuapp.com)
-A Django app with news, made as a test task for a Backend-developer vacancy.
+## [Deployed Heroku](https://dteamtask.herokuapp.com)
+A Django app made as a test task for a Backend-developer vacancy.  
+It allow to get the news list, authors and generates new news itself every 5 minutes.  
+It has API for geting, posting, patching and deleting news.
 
 
 ## About Developing
 
 - The task was written in 1 day
 - First time working with Celery and Redis
+- First time working with pipenv
 
 
 ## Link Structure
